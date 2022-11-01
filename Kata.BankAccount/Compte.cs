@@ -10,14 +10,17 @@ namespace Kata.BankAccount
     {
         public void Deposer(int montant)
         {
+            throw new NotImplementedException();
         }
 
         public void Retirer(int montant)
         {
+            throw new NotImplementedException();
         }
 
         public void AfficherExtrait()
         {
+            throw new NotImplementedException();
         }
     }
 }
