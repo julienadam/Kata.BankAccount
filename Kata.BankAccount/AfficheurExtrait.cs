@@ -17,14 +17,20 @@ public class AfficheurExtrait : IAfficheurExtrait
     {
         terminal.AfficherLigne(ENTETE_EXTRAIT);
 
+        var solde = 0;
         mouvements
-            .Select(FormatterLigne)
+            .Select(mouvement =>
+            {
+                solde += mouvement.Montant;
+                return FormatterLigne(mouvement, solde);
+            })
+            .Reverse()
             .ToList()
             .ForEach(l => terminal.AfficherLigne(l));
     }
 
-    private static string FormatterLigne(Mouvement m)
+    private static string FormatterLigne(Mouvement m, int solde)
     {
-        return $"{m.Date} | {m.Montant:F2} | {m.Montant:F2}";
+        return $"{m.Date} | {m.Montant:F2} | {solde:F2}";
     }
 }

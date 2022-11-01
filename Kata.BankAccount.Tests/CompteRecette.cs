@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Moq;
 using Xunit;
 
@@ -11,7 +12,13 @@ public class CompteRecette
     {
         var console = new Mock<ITerminal>();
         var stockageMouvements = new StockageMouvements();
-        var horloge = new Horloge(() => DateTime.Today);
+        var dates = new Queue<DateTime>(new[]
+        {
+            new DateTime(2021, 08, 01),
+            new DateTime(2021, 08, 06),
+            new DateTime(2021, 08, 27)
+        });
+        var horloge = new Horloge(() => dates.Dequeue());
         var afficheur = new AfficheurExtrait(console.Object);
         var account = new Compte(stockageMouvements, horloge, afficheur);
         account.Deposer(1000);
