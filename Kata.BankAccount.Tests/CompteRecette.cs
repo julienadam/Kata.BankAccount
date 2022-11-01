@@ -11,7 +11,8 @@ public class CompteRecette
     {
         var console = new Mock<Terminal>();
         var stockageMouvements = new StockageMouvements();
-        var account = new Compte(stockageMouvements);
+        var horloge = new Horloge(() => DateTime.Today);
+        var account = new Compte(stockageMouvements, horloge);
         account.Deposer(1000);
         account.Retirer(100);
         account.Deposer(500);

@@ -8,21 +8,23 @@ namespace Kata.BankAccount
 {
     public class Compte
     {
-        private readonly StockageMouvements stockageMouvements;
+        private readonly IStockageMouvements stockageMouvements;
+        private readonly IHorloge horloge;
 
-        public Compte(StockageMouvements stockageMouvements)
+        public Compte(IStockageMouvements stockageMouvements, IHorloge horloge)
         {
             this.stockageMouvements = stockageMouvements;
+            this.horloge = horloge;
         }
 
         public void Deposer(int montant)
         {
-            stockageMouvements.EnregistrerDepot("01/01/2001", montant);
+            stockageMouvements.EnregistrerDepot(horloge.DateDuJour, montant);
         }
 
         public void Retirer(int montant)
         {
-            throw new NotImplementedException();
+            stockageMouvements.EnregistrerRetrait(horloge.DateDuJour, montant);
         }
 
         public void AfficherExtrait()

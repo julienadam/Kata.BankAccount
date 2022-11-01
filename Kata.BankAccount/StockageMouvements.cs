@@ -1,6 +1,6 @@
 ﻿namespace Kata.BankAccount;
 
-public class StockageMouvements
+public class StockageMouvements : IStockageMouvements
 {
     private readonly List<Mouvement> mouvements = new();
     public IReadOnlyCollection<Mouvement> ToutesLesTransactions => mouvements.AsReadOnly();
