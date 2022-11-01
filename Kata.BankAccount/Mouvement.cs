@@ -7,11 +7,11 @@ public record Mouvement
 
     public static Mouvement Retrait(string date, int montant)
     {
-        return new Mouvement { Date = date, Montant = montant };
+        return new Mouvement { Date = date, Montant = -montant };
     }
 
     public static Mouvement Depot(string date, int montant)
     {
-        return new Mouvement { Date = date, Montant = -montant };
+        return new Mouvement { Date = date, Montant = montant };
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kata.BankAccount
 {
-    public class Terminal
+    public class Terminal : ITerminal
     {
         public void AfficherLigne(string ligne)
         {
