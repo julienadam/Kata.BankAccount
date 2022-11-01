@@ -10,11 +10,13 @@ namespace Kata.BankAccount
     {
         private readonly IStockageMouvements stockageMouvements;
         private readonly IHorloge horloge;
+        private readonly IAfficheurExtrait afficheurExtrait;
 
-        public Compte(IStockageMouvements stockageMouvements, IHorloge horloge)
+        public Compte(IStockageMouvements stockageMouvements, IHorloge horloge, IAfficheurExtrait afficheurExtrait)
         {
             this.stockageMouvements = stockageMouvements;
             this.horloge = horloge;
+            this.afficheurExtrait = afficheurExtrait;
         }
 
         public void Deposer(int montant)
@@ -29,7 +31,7 @@ namespace Kata.BankAccount
 
         public void AfficherExtrait()
         {
-            throw new NotImplementedException();
+            afficheurExtrait.AfficherExtrait(stockageMouvements.ToutesLesTransactions);
         }
     }
 }
