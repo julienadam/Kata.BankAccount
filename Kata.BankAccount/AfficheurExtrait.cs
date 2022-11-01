@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Kata.BankAccount;
+﻿namespace Kata.BankAccount;
 
 public class AfficheurExtrait : IAfficheurExtrait
 {

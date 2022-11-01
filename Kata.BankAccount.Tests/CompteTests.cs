@@ -1,11 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Moq;
-using NFluent;
 using Xunit;
-using Xunit.Sdk;
 
 namespace Kata.BankAccount.Tests
 {
@@ -13,7 +8,7 @@ namespace Kata.BankAccount.Tests
     {
         private readonly Mock<IStockageMouvements> stockageMouvements = new();
         private readonly Compte compte;
-        private Mock<IAfficheurExtrait> afficheur;
+        private readonly Mock<IAfficheurExtrait> afficheur;
         private const string AUJOURDHUI = "31/12/2020";
 
         public CompteTests()
