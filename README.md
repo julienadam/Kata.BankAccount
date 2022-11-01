@@ -3,8 +3,8 @@ Outside-In TDD par les tests de recette
 
 ### Objectifs
 
-Pratiquer la double boucle du TDD "Outside-In"
-Tester l'application depuis l'extérieur, identifier les effets de bord
+- Pratiquer la double boucle du TDD "Outside-In"
+- Tester l'application depuis l'extérieur, identifier les effets de bord
  
 ### Description du problème, le kata compte bancaire
 
@@ -16,7 +16,7 @@ Créer une application de gestion de compte bancaire simple avec les fonctionnali
  
 ## Résultats attendus
 
-- L'extrait de compte doit présenter les mouvements dans le format suivant :
+L'extrait de compte doit présenter les mouvements dans le format suivant :
 
 ```
 DATE       | MONTANT | SOLDE
@@ -27,7 +27,7 @@ DATE       | MONTANT | SOLDE
 
 ## Point de départ et contraintes
 
-- On démarrera avec la classe suivante :
+On démarrera avec la classe suivante :
 
 ```cs
 public class Compte 
@@ -40,8 +40,9 @@ public class Compte
 }
 ```
 
-- **Il est interdit d'ajouter des méthodes publiques à cette classe ou de modifier les signatures !!**
-- Pour simplifier l'exercice:
+**Il est interdit d'ajouter des méthodes publiques à cette classe ou de modifier les signatures !!**
+
+Pour simplifier l'exercice:
   - on utilisera des entiers pour les montants et des chaînes de caractères pour les dates
   - le formattage exact des colonnes (espaces, alignement etc) n'est pas important
 
