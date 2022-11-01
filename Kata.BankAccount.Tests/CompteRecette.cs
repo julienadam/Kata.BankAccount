@@ -10,7 +10,8 @@ public class CompteRecette
     public void L_extrait_de_compte_affiche_les_transactions_dans_l_ordre_chronologique_inverse()
     {
         var console = new Mock<Terminal>();
-        var account = new Compte();
+        var stockageMouvements = new StockageMouvements();
+        var account = new Compte(stockageMouvements);
         account.Deposer(1000);
         account.Retirer(100);
         account.Deposer(500);
